@@ -9,6 +9,8 @@ body {
 	font-family:  'Alice', serif;
 	font-size: 18px;
 	line-height: 1.5;
+	max-width: 1200px;
+    margin: 0 auto;
 }
 
 h1, h2, h3 {
@@ -65,4 +67,102 @@ blockquote {
 	- https://css-tricks.com/patterns-for-practical-css-custom-properties-use/
 	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
 */
+.blog {
+	display: grid;
+	grid-template-columns: 1fr 4fr 2fr;
+	gap: 40px;
+}
 
+header {
+	grid-column: 2/3;
+}
+
+h1 {
+	font-size: 80px;
+	color: var(--limetka);
+}
+
+h2 {
+	grid-column: 2/3;
+	color: var(--limetka);
+	font-size: 60px;
+}
+
+.tip-vlevo {
+	grid-column: 1/2;
+}
+
+.tip-vpravo {
+	grid-column: 3/4;
+}
+
+p {
+	grid-column: 2/3;
+	margin: 0;
+}
+
+figure {
+	grid-column: 1/-1;
+	color: var(--seda);
+	margin: 0;
+}
+
+blockquote {
+	grid-column: 1/-1;
+	text-align: center;
+	font-size: 35px;
+	color: var(--seda);
+}
+
+blockquote::after, 
+blockquote::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 2px;
+    background-color: var(--limetka);
+    margin: 10px auto; 
+}
+
+footer{
+	grid-column: 2/3;
+	color: var(--seda);
+}
+
+footer a {
+	color: var(--seda);
+	text-decoration: underline;
+}
+
+img{
+	max-width: 100%;;
+}
+
+.meta {
+	color: var(--seda);
+}
+
+.tip {
+	background-color: var(--svetla);
+	color: var(--tmava);
+	padding: 20px;
+	height: fit-content;
+}  
+
+.tip a {
+	color: var(--zluta)
+}
+
+.tip-vlevo {
+	text-align: right;
+	border-right: 3px solid var(--zluta);
+}
+
+.tip-vpravo {
+	text-align: left;
+	border-left: 3px solid var(--zluta);
+}
+
+a {
+	text-decoration: none;
+}
