@@ -9,8 +9,6 @@ body {
 	font-family:  'Alice', serif;
 	font-size: 18px;
 	line-height: 1.5;
-	max-width: 1200px;
-    margin: 0 auto;
 }
 
 h1, h2, h3 {
@@ -67,102 +65,117 @@ blockquote {
 	- https://css-tricks.com/patterns-for-practical-css-custom-properties-use/
 	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
 */
+
 .blog {
 	display: grid;
 	grid-template-columns: 1fr 4fr 2fr;
-	gap: 40px;
+	gap: 0px 40px;
 }
 
 header {
 	grid-column: 2/3;
 }
 
+h1,
+h2 {
+	grid-column: 2/3;
+	color: #a3cb38;
+}
+
 h1 {
 	font-size: 80px;
-	color: var(--limetka);
+	margin-bottom: 60px;
 }
 
 h2 {
-	grid-column: 2/3;
-	color: var(--limetka);
 	font-size: 60px;
 }
 
-.tip-vlevo {
-	grid-column: 1/2;
-}
-
-.tip-vpravo {
-	grid-column: 3/4;
+.meta {
+	grid-column: 2/3;
+	color: #636e72;
+	color: #b2bec3;
+	margin: 0;
 }
 
 p {
 	grid-column: 2/3;
+}
+
+.tip {
+	background-color: #edf3f5;
+	padding: 10px;
+	display: inline-block;
+	max-height: fit-content;
+	margin-top: 20px;
+}
+
+.tip p {
+	color: #636e72;
+	font-size: 80%;
+}
+
+.tip a {
+	color: #ee5a24;
+}
+
+.tip-vlevo {
+	grid-column: 1/2;
+	border-right: 2px solid #ee5a24;
+	text-align: right;
+}
+
+.tip-vpravo {
+	grid-column: 3/4;
+	border-left: 1px solid #ee5a24;
+	text-align: left;
+}
+
+blockquote, 
+figure, 
+img {
+	grid-column: 1/-1;
+}
+
+footer {
+	grid-column: 2/3;
+	font-size: 80%;
+	color: #b2bec3;
+}
+
+footer a {
+	color: #b2bec3;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
 	margin: 0;
 }
 
 figure {
-	grid-column: 1/-1;
-	color: var(--seda);
 	margin: 0;
 }
 
+figcaption {
+	color: #b2bec3;
+	margin-bottom: 20px;
+}
+
 blockquote {
-	grid-column: 1/-1;
 	text-align: center;
-	font-size: 35px;
-	color: var(--seda);
+	font-size: 36px;
+	color: #b2bec3;
 }
 
-blockquote::after, 
+blockquote::after,
 blockquote::before {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 2px;
-    background-color: var(--limetka);
-    margin: 10px auto; 
+	content: "";
+	display: block;
+	width: 100px;
+	height: 3px;
+	background-color: #c4e538;
+	margin: 20px auto;
 }
+	
 
-footer{
-	grid-column: 2/3;
-	color: var(--seda);
-}
-
-footer a {
-	color: var(--seda);
-	text-decoration: underline;
-}
-
-img{
-	max-width: 100%;;
-}
-
-.meta {
-	color: var(--seda);
-}
-
-.tip {
-	background-color: var(--svetla);
-	color: var(--tmava);
-	padding: 20px;
-	height: fit-content;
-}  
-
-.tip a {
-	color: var(--zluta)
-}
-
-.tip-vlevo {
-	text-align: right;
-	border-right: 3px solid var(--zluta);
-}
-
-.tip-vpravo {
-	text-align: left;
-	border-left: 3px solid var(--zluta);
-}
-
-a {
-	text-decoration: none;
-}
